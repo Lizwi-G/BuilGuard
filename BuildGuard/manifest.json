@@ -1,0 +1,14 @@
+{
+  "name": "BuildGuard — Construction Cost Control",
+  "short_name": "BuildGuard",
+  "description": "Find and prevent money leaks on your construction sites.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0F2A20",
+  "theme_color": "#1B4332",
+  "icons": [
+    { "src": "assets/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

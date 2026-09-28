@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08241A">
+<title>BuildGuard — Stop the Money Leaks</title>
+<meta name="description" content="BuildGuard helps growing construction companies find and prevent money leaks in fuel, materials and purchasing.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top bar: brand + company + connection/sync status -->
+  <header class="topbar" id="topbar">
+    <div class="topbar-left">
+      <button id="menuBtn" class="icon-btn" aria-label="Menu" title="Menu">☰</button>
+      <a class="brand" href="#/dashboard" aria-label="BuildGuard home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 512 512"><path d="M256 76 L426 156 V246 C426 356 356 436 256 466 C156 436 86 356 86 246 V156 Z" fill="#2E9A6B" stroke="#95D5B2" stroke-width="12"/><path d="M256 130 L378 186 V244 C378 328 324 388 256 412 C188 388 134 328 134 244 V186 Z" fill="#F2A21B"/><path d="M186 300 L226 260 L256 288 L326 210" stroke="#0C3124" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="326" cy="210" r="15" fill="#0C3124"/></svg>
+        </span>
+        <span class="brand-text"><span class="brand-name">BuildGuard</span><span class="brand-tag">Financial Control</span></span>
+      </a>
+    </div>
+    <div class="topbar-right">
+      <span id="syncBadge" class="sync-badge hidden" title="Pending sync">⏳ <span id="syncCount">0</span></span>
+      <span id="connBadge" class="conn-badge online" title="Connection status">Online</span>
+      <button id="notifBtn" class="icon-btn" aria-label="Notifications" title="Notifications" style="position:relative;">
+        🔔<span id="notifBadge" class="notif-badge hidden">0</span>
+      </button>
+      <button id="userBtn" class="icon-btn" aria-label="Account" title="Account">👤</button>
+    </div>
+  </header>
+
+  <!-- Demo mode ribbon -->
+  <div id="demoRibbon" class="demo-ribbon hidden">
+    🧪 DEMO MODE — sample data only, nothing is sent to a real server
+  </div>
+
+  <div class="app-shell">
+    <!-- Desktop sidebar -->
+    <aside class="sidebar" id="sidebar" aria-label="Primary navigation"></aside>
+
+    <!-- Main content -->
+    <main id="app" class="app-content" role="main" tabindex="-1"></main>
+  </div>
+
+  <!-- Mobile bottom navigation -->
+  <nav class="bottom-nav" id="bottomNav" aria-label="Primary navigation"></nav>
+  <!-- Small handle that appears when the bottom nav auto-hides on scroll — tap to bring it straight back -->
+  <div class="bottom-nav-peek" id="bottomNavPeek" aria-label="Show navigation" role="button" tabindex="0"></div>
+
+  <!-- Toast / confirmation messages -->
+  <div id="toastHost" class="toast-host" aria-live="polite"></div>
+
+  <!-- Generic modal (used for account switcher, confirmations, etc.) -->
+  <div id="modalHost" class="modal-host hidden">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card" id="modalCard" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
